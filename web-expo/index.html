@@ -1,98 +1,519 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- icon bootsrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
-    />
-    <!-- link css -->
-    <link rel="stylesheet" href="./index.css" />
-    <title>SmartTrip | Aplikasi Destinasi</title>
-  </head>
-  <body style="margin: 0; padding: 0; font-family: sans-serif">
-    <header
-      style="
-        margin: auto;
-        width: 60%;
-        display: flex;
-        position: sticky;
-        top: 0px;
-        background-color: rgba(248, 248, 248, 0.705);
-        padding: 0px 40px 0px 40px;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 10px;
-        margin-top: 30px;
-      "
-    >
-      <div>
-        <h1>SmartTrip</h1>
-      </div>
-      <div style="display: flex; gap: 2rem; align-items: center">
-        <div>
-          <nav>
-            <ul style="display: flex; gap: 3rem">
-              <li><a href="#Beranda">Beranda</a></li>
-              <li><a href="#Beranda">Tentang Kami</a></li>
-              <li><a href="#Beranda">Fitur</a></li>
-              <li><a href="#Beranda">Unduh</a></li>
-              <li><a href="#Beranda">Ulasan</a></li>
-              <li><a href="#Beranda">Kontak</a></li>
-            </ul>
-          </nav>
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartTrip Lampung - The Future of Travel Intelligence & Multi-Agent AI</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- File CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        
+        <!-- Logo -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-white font-extrabold text-sm">
+            <i class="fa-solid fa-compass text-teal-400"></i>
+          </div>
+          <span class="text-xl font-extrabold text-slate-900 tracking-tight">SmartTrip</span>
         </div>
+
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+          <a href="#hero" class="hover:text-slate-900 transition">Features</a>
+          <a href="#gallery" class="hover:text-slate-900 transition">About Us</a>
+          <a href="#faq" class="hover:text-slate-900 transition">Blog</a>
+          <a href="#cards" class="hover:text-slate-900 transition">Pricing</a>
+          <a href="#faq" class="hover:text-slate-900 transition">Contact</a>
+        </div>
+
+        <!-- Right Controls -->
+        <div class="hidden md:flex items-center gap-2">
+          <button class="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50">
+            <i class="fa-solid fa-arrow-left-long text-xs"></i>
+          </button>
+          <button class="w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50">
+            <i class="fa-solid fa-play text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="p-2 text-slate-600 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 py-4 space-y-3">
+      <a href="#hero" class="block text-sm font-semibold text-slate-700">Features</a>
+      <a href="#gallery" class="block text-sm font-semibold text-slate-700">About Us</a>
+      <a href="#faq" class="block text-sm font-semibold text-slate-700">FAQ</a>
+      <a href="#download" class="block text-sm font-bold text-blue-600">Unduh Aplikasi</a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Big Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
+        The Future of Lampung Travel Intelligence & Well-being
+      </h1>
+
+      <p class="mt-4 text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        Don't just book your trip—quantify it. SmartTrip synchronizes your itinerary with Multi-Agent AI to show the true pulse of your Lampung travel experience.
+      </p>
+
+      <!-- 3D HERO PHONE SHOWCASE (3 PHONES OVERLAPPING) -->
+      <div class="mt-12 sm:mt-16 relative flex items-center justify-center max-w-5xl mx-auto min-h-[380px] sm:min-h-[500px]">
+        
+        <!-- Left Side Phone -->
+        <div class="absolute left-1/2 -translate-x-[115%] sm:-translate-x-[130%] top-6 sm:top-10 w-44 sm:w-60 bg-slate-900 p-2 sm:p-3 rounded-[32px] sm:rounded-[40px] shadow-xl border-2 border-slate-700 transform -rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
+          <div class="bg-slate-100 rounded-[24px] sm:rounded-[30px] p-3 text-left space-y-3">
+            <div class="flex justify-between items-center text-[10px] font-bold text-slate-400">
+              <span>9:38</span>
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-sm">
+              <span class="text-[9px] font-extrabold text-blue-600 uppercase">Trip Journal</span>
+              <p class="text-xs font-bold text-slate-800 mt-0.5">Snorkeling Pahawang</p>
+              <p class="text-[10px] text-slate-500">Day 1 • 09.00 WIB</p>
+            </div>
+            <div class="h-28 bg-slate-200 rounded-xl overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Pahawang" class="w-full h-full object-cover">
+              <span class="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">Spot Nemo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Phone (MAIN FOCUS) -->
+        <div class="relative z-30 w-56 sm:w-72 bg-slate-950 p-2.5 sm:p-3.5 rounded-[36px] sm:rounded-[48px] shadow-2xl border-4 border-slate-800 transform hover:scale-105 transition duration-300">
+          
+          <!-- Dynamic Island Notch -->
+          <div class="w-20 sm:w-24 h-3.5 sm:h-4 bg-black rounded-full mx-auto mb-3"></div>
+
+          <div class="bg-slate-50 rounded-[28px] sm:rounded-[36px] p-3.5 sm:p-4 text-left space-y-3 sm:space-y-4">
+            
+            <div class="text-center pt-1">
+              <h3 class="text-sm sm:text-base font-extrabold text-slate-900">Ready to Explore <br><span class="text-blue-600">Lampung!</span></h3>
+            </div>
+
+            <!-- Search Bar Mockup -->
+            <div class="bg-white border border-slate-200 rounded-full px-3 py-1.5 flex items-center justify-between text-xs text-slate-400 shadow-sm">
+              <span class="text-[10px] sm:text-xs">Search Pahawang, Kiluan...</span>
+              <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+            </div>
+
+            <!-- AI Insights Pills -->
+            <div>
+              <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">AI Insights Today</p>
+              <div class="grid grid-cols-3 gap-1.5 text-center">
+                <div class="bg-amber-50 p-2 rounded-xl border border-amber-100">
+                  <i class="fa-solid fa-location-dot text-amber-500 text-xs"></i>
+                  <p class="text-[9px] font-bold text-slate-700 mt-1">Trending</p>
+                </div>
+                <div class="bg-blue-50 p-2 rounded-xl border border-blue-100">
+                  <i class="fa-solid fa-cloud-sun text-blue-500 text-xs"></i>
+                  <p class="text-[9px] font-bold text-slate-700 mt-1">Weather</p>
+                </div>
+                <div class="bg-emerald-50 p-2 rounded-xl border border-emerald-100">
+                  <i class="fa-solid fa-shield-halved text-emerald-500 text-xs"></i>
+                  <p class="text-[9px] font-bold text-slate-700 mt-1">Safe Spot</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Nav -->
+            <div class="pt-2 border-t border-slate-200 flex justify-around text-slate-400 text-xs">
+              <i class="fa-solid fa-house text-blue-600"></i>
+              <i class="fa-solid fa-compass"></i>
+              <i class="fa-solid fa-grid-2"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Side Phone -->
+        <div class="absolute right-1/2 translate-x-[115%] sm:translate-x-[130%] top-6 sm:top-10 w-44 sm:w-60 bg-slate-900 p-2 sm:p-3 rounded-[32px] sm:rounded-[40px] shadow-xl border-2 border-slate-700 transform rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
+          <div class="bg-slate-100 rounded-[24px] sm:rounded-[30px] p-3 text-left space-y-3">
+            <div class="flex justify-between items-center text-[10px] font-bold text-slate-400">
+              <span>9:38</span>
+              <i class="fa-solid fa-battery-full"></i>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-sm">
+              <span class="text-[9px] font-extrabold text-teal-600 uppercase">Hidden Gems</span>
+              <p class="text-xs font-bold text-slate-800 mt-0.5">Tanjung Setia Krui</p>
+              <p class="text-[10px] text-slate-500">World-class Surfing</p>
+            </div>
+            <div class="h-28 bg-slate-200 rounded-xl overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Krui" class="w-full h-full object-cover">
+              <span class="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">Pesisir Barat</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- icon -->
-      <div class="">
-        <div
-          style="
-            border: none;
-            background-color: rgba(175, 175, 175, 0.753);
-            padding: 4px;
-            width: 30px;
-            text-align: center;
-            border-radius: 5px;
-          "
-        >
-          <i class="bi bi-google-play" style="font-size: 20px"></i>
-        </div>
-      </div>
-    </header>
+      <!-- Tagline Text Below Showcase -->
+      <h2 class="mt-10 sm:mt-14 text-xl sm:text-2xl font-black text-slate-900 max-w-2xl mx-auto leading-snug">
+        Design a smarter travel lifestyle with a layout that keeps your <span class="text-blue-600">insights, health, and alerts</span> simple to follow.
+      </h2>
 
-    <section class="" id="Beranda">
-      <div style="margin-top: 8rem; text-align: center">
-        <div style="margin: auto; width: 60%">
-          <h1 style="font-size: 40px">
-            Temukan Pesona Tersembunyi Lampung, Ciptakan Cerita di Setiap
-            Perjalanan
-          </h1>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 2: MULTI-SCREEN APP GALLERY ================= -->
+  <section id="gallery" class="py-16 bg-slate-100/60 border-y border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Horizontal Phone Mockup Showcase Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center justify-center">
+        
+        <!-- Screen 1: Hidden Gems Nearby -->
+        <div class="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm text-left space-y-3 max-w-xs mx-auto w-full">
+          <div class="flex justify-between items-center text-xs font-bold text-slate-400">
+            <i class="fa-solid fa-bars"></i>
+            <span class="text-slate-800">Must-See Today</span>
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="h-28 bg-slate-200 rounded-2xl overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=300&q=80" alt="Pahawang" class="w-full h-full object-cover">
+              <span class="absolute bottom-1 left-1 text-[9px] bg-slate-900/80 text-white px-1.5 py-0.5 rounded font-bold">Pahawang</span>
+            </div>
+            <div class="h-28 bg-slate-200 rounded-2xl overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=300&q=80" alt="Way Kambas" class="w-full h-full object-cover">
+              <span class="absolute bottom-1 left-1 text-[9px] bg-slate-900/80 text-white px-1.5 py-0.5 rounded font-bold">Way Kambas</span>
+            </div>
+          </div>
+          <p class="text-xs font-bold text-slate-800">Hidden Gems Nearby</p>
         </div>
-        <div style="margin: auto; width: 40%">
-          <p style="color: grey">
-            Jelajahi beragam keindahan wisata Lampung, temukan destinasi menarik
-            yang belum pernah kamu kunjungi, dan rencanakan perjalanan seru
-            sesuai keinginananmu bersama SmartTrip.
+
+        <!-- Screen 2: Explore Lampung Main Screen -->
+        <div class="bg-slate-900 text-white p-5 rounded-[36px] shadow-xl border-4 border-slate-800 text-left space-y-3 max-w-xs mx-auto w-full">
+          <div class="w-16 h-3 bg-slate-800 rounded-full mx-auto mb-2"></div>
+          <h4 class="text-base font-extrabold text-center">Ready to Explore <br><span class="text-teal-400">Lampung!</span></h4>
+          <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700">
+            <p class="text-[10px] text-slate-400 uppercase font-bold">Locals by AI</p>
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <div class="bg-blue-600/30 p-2 rounded-xl border border-blue-500/30">
+                <p class="text-xs font-bold text-white">Mount Rajabasa</p>
+                <p class="text-[9px] text-slate-300">Lampung Selatan</p>
+              </div>
+              <div class="bg-teal-600/30 p-2 rounded-xl border border-teal-500/30">
+                <p class="text-xs font-bold text-white">Kiluan Bay</p>
+                <p class="text-[9px] text-slate-300">Dolphin Spot</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen 3: Plan A Trip (Date & Budget) -->
+        <div class="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm text-left space-y-3 max-w-xs mx-auto w-full">
+          <p class="text-xs font-black text-slate-900 text-center">Plan A Trip</p>
+          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+            <p class="text-[10px] font-bold text-slate-400">Date & Budget</p>
+            <p class="text-xs font-black text-blue-600 mt-1">Rp 350.000 / orang</p>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase">Travel Style</p>
+            <div class="flex gap-2 mt-1 text-[10px] font-bold">
+              <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg">Backpacker</span>
+              <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded-lg">Family</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: 3 VALUE CARDS ================= -->
+  <section id="cards" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Orange Icon -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition text-center sm:text-left">
+          <div class="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-amber-500/20">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 mb-2">Save Time</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-6">
+            Tired of spending hours planning itineraries? Our Multi-Agent AI builds your custom Lampung trip instantly.
           </p>
+          <a href="#faq" class="text-xs font-bold text-slate-900 hover:text-blue-600 inline-flex items-center gap-1">
+            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
         </div>
+
+        <!-- Card 2: Light Blue Icon -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition text-center sm:text-left">
+          <div class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-blue-500/20">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 mb-2">Empower Local UMKM</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-6">
+            Let us spot local businesses, culinary spots, and homestays to elevate Lampung's tourism ecosystem.
+          </p>
+          <a href="#faq" class="text-xs font-bold text-slate-900 hover:text-blue-600 inline-flex items-center gap-1">
+            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Card 3: Dark Blue Icon -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition text-center sm:text-left">
+          <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-slate-900/20">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 mb-2">Increase Engagement</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-6">
+            Keep your trip connected with real-time AI weather alerts, safety tracking, and automated ticket validation.
+          </p>
+          <a href="#faq" class="text-xs font-bold text-slate-900 hover:text-blue-600 inline-flex items-center gap-1">
+            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
       </div>
 
-      <div style="margin-top: 7rem">
-        <div
-          style="
-            margin: auto;
-            width: 40%;
-            height: 25rem;
-            background-color: #dce8fa;
-            border-top-left-radius: 200rem;
-            border-top-right-radius: 200rem;
-          "
-        ></div>
-        <div></div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: NEWSLETTER & QR CODE APP BANNER ================= -->
+  <section id="download" class="py-16 bg-emerald-50/50 border-y border-emerald-100/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Side: Newsletter Form -->
+        <div class="space-y-4 text-center lg:text-left">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">STAY UPDATED</span>
+          
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
+            Subscribe to our newsletter for exclusive insider access!
+          </h2>
+
+          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md mx-auto lg:mx-0">
+            Get the latest travel tips, feature updates, and special offers delivered straight to your inbox.
+          </p>
+
+          <form id="subscribe-form" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto lg:mx-0 pt-2">
+            <input type="email" placeholder="Your email address" required class="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-slate-800">
+            <button type="submit" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-6 py-3 rounded-xl transition">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <!-- Right Side: Phone with QR Code -->
+        <div class="flex justify-center">
+          <div class="w-64 bg-slate-900 p-3 rounded-[36px] shadow-xl border-2 border-slate-700">
+            <div class="bg-white rounded-[28px] p-5 text-center space-y-3">
+              <p class="text-xs font-black text-slate-900">Get the App on Your Phone!</p>
+              <p class="text-[10px] text-slate-500">Scan the QR code to download SmartTrip and start your next adventure!</p>
+              
+              <!-- Simulated QR Code SVG -->
+              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex justify-center">
+                <svg class="w-32 h-32 text-slate-900" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2,2H10V10H2V2M4,4V8H8V4H4M11,2H13V4H11V2M14,2H22V10H14V2M16,4V8H20V4H16M2,14H10V22H2V14M4,16V20H8V16H4M11,6H13V8H11V6M11,10H13V12H11V10M11,14H13V16H11V14M11,18H13V20H11V18M14,11H16V13H14V11M17,11H19V13H17V11M20,11H22V13H20V11M14,14H16V16H14V14M17,14H19V16H17V14M20,14H22V16H20V14M14,17H16V19H14V17M17,17H19V19H17V17M20,17H22V19H20V17M14,20H16V22H14V20M17,20H19V22H17V20M20,20H22V22H20V20Z"/>
+                </svg>
+              </div>
+
+              <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Scan to Download</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
-  </body>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5: FAQ SECTION WITH PHONE MOCKUP ================= -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Side Phone Mockup (Cols 4) -->
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="w-64 sm:w-72 bg-slate-950 p-3 rounded-[40px] shadow-xl border-4 border-slate-800">
+            <div class="w-20 h-3.5 bg-black rounded-full mx-auto mb-2"></div>
+            <div class="bg-slate-50 rounded-[30px] p-4 text-left space-y-3">
+              <h4 class="text-sm font-extrabold text-slate-900 text-center">Ready to Explore <br><span class="text-blue-600">Lampung!</span></h4>
+              
+              <div class="bg-white p-3 rounded-2xl border border-slate-200">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">AI Insights Today</p>
+                <div class="grid grid-cols-3 gap-1 mt-2 text-center text-[9px] font-bold">
+                  <span class="bg-amber-50 text-amber-700 p-1.5 rounded-lg">Trending</span>
+                  <span class="bg-blue-50 text-blue-700 p-1.5 rounded-lg">Weather</span>
+                  <span class="bg-emerald-50 text-emerald-700 p-1.5 rounded-lg">Safe Spot</span>
+                </div>
+              </div>
+
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold text-slate-800">Mount Puji</p>
+                  <p class="text-[9px] text-slate-400">Lampung Spot</p>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side FAQ Accordion List (Cols 8) -->
+        <div class="lg:col-span-8 space-y-4">
+          <h2 class="text-2xl font-black text-slate-900 mb-6">Frequently Asked Questions</h2>
+
+          <!-- FAQ Item 1 -->
+          <div class="border-b border-slate-200 pb-4">
+            <button class="faq-toggle w-full flex justify-between items-center text-left text-sm font-extrabold text-slate-900 focus:outline-none">
+              <span>Can I customize the AI-suggested routes?</span>
+              <i class="fa-solid fa-plus text-slate-400 text-xs"></i>
+            </button>
+            <p class="faq-content hidden text-xs text-slate-500 mt-2 leading-relaxed">
+              Absolutely. You can add, drag-and-drop, or remove attractions at any time. The Multi-Agent AI will automatically re-optimize your travel schedule and budget.
+            </p>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="border-b border-slate-200 pb-4">
+            <button class="faq-toggle w-full flex justify-between items-center text-left text-sm font-extrabold text-slate-900 focus:outline-none">
+              <span>How does the AI plan my trip?</span>
+              <i class="fa-solid fa-plus text-slate-400 text-xs"></i>
+            </button>
+            <p class="faq-content hidden text-xs text-slate-500 mt-2 leading-relaxed">
+              Our AI analyzes real-time weather, travel distance between Lampung regencies, local UMKM availability, and your personal travel style preferences.
+            </p>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="border-b border-slate-200 pb-4">
+            <button class="faq-toggle w-full flex justify-between items-center text-left text-sm font-extrabold text-slate-900 focus:outline-none">
+              <span>Can I use the app offline while traveling?</span>
+              <i class="fa-solid fa-plus text-slate-400 text-xs"></i>
+            </button>
+            <p class="faq-content hidden text-xs text-slate-500 mt-2 leading-relaxed">
+              Yes! Your downloaded itineraries and E-Ticket QR codes remain accessible even without an active internet connection.
+            </p>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="border-b border-slate-200 pb-4">
+            <button class="faq-toggle w-full flex justify-between items-center text-left text-sm font-extrabold text-slate-900 focus:outline-none">
+              <span>Is the "Hidden Gems" data authentic?</span>
+              <i class="fa-solid fa-plus text-slate-400 text-xs"></i>
+            </button>
+            <p class="faq-content hidden text-xs text-slate-500 mt-2 leading-relaxed">
+              Yes, all hidden gem recommendations are curated directly from verified local guides and community feedback in Lampung.
+            </p>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="border-b border-slate-200 pb-4">
+            <button class="faq-toggle w-full flex justify-between items-center text-left text-sm font-extrabold text-slate-900 focus:outline-none">
+              <span>How accurate are the weather and safety alerts?</span>
+              <i class="fa-solid fa-plus text-slate-400 text-xs"></i>
+            </button>
+            <p class="faq-content hidden text-xs text-slate-500 mt-2 leading-relaxed">
+              Alerts are synced in real-time with official meteorology and coastal safety data for Pahawang, Kiluan, and Krui.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 6: FOOTER ================= -->
+  <footer class="bg-slate-50 py-16 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="md:col-span-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center text-white font-extrabold text-xs">
+              <i class="fa-solid fa-compass text-teal-400"></i>
+            </div>
+            <span class="text-lg font-black text-slate-900">SmartTrip</span>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed max-w-xs">
+            Revolutionizing global travel with an all-in-one itinerary platform driven by modern AI efficiency for exploration in 100+ countries and Lampung.
+          </p>
+          <div class="flex gap-3 text-slate-400 text-sm pt-2">
+            <a href="#" class="hover:text-slate-900"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="hover:text-slate-900"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-slate-900"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Pages Links -->
+        <div class="md:col-span-2 space-y-2 text-xs">
+          <p class="font-black text-slate-900 mb-3">Pages</p>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Home</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Features</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">About Us</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Pricing</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Contact</a>
+        </div>
+
+        <!-- Col 3: Utility Links -->
+        <div class="md:col-span-2 space-y-2 text-xs">
+          <p class="font-black text-slate-900 mb-3">Utility</p>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Style Guide</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">404 Page</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Licenses</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Privacy Policy</a>
+          <a href="#" class="block text-slate-500 hover:text-slate-900">Terms & Conditions</a>
+        </div>
+
+        <!-- Col 4: Newsletter Box Widget -->
+        <div class="md:col-span-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+          <p class="text-xs font-black text-slate-900">Subscribe Our Weekly Newsletter</p>
+          <p class="text-[11px] text-slate-500">Experience effortless AI travel planning on the go. Get real-time updates tailored to your travel interests.</p>
+          <div class="flex gap-2">
+            <input type="email" placeholder="Your email address" class="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 focus:outline-none">
+            <button class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-4 py-2 rounded-lg">Subscribe</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-200 text-center text-[11px] text-slate-400">
+        &copy; 2026 SmartTrip Lampung. All rights reserved. Designed for Travel Innovation.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- File JS Eksternal -->
+  <script src="script.js"></script>
+</body>
 </html>
